@@ -31,7 +31,7 @@ export default async function AuthLayout({
             <SourceNotice />
           </div>
         </div>
-        <div className="text-[36px] flex-1 pt-[88px] [@media(max-height:820px)]:pt-[40px] pb-[12px] hidden lg:flex flex-col items-center">
+        <div className="text-[36px] flex-1 pt-[88px] [@media(max-height:820px)]:pt-[40px] pb-[12px] hidden lg:flex flex-col items-center lg:sticky lg:top-[12px] lg:self-start lg:h-[calc(100vh-24px)]">
           <div className="text-center">
             Programa y publica en todas tus redes
             <br />
