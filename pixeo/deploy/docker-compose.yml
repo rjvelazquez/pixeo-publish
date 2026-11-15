@@ -103,6 +103,9 @@ services:
       POSTGRES_PWD: ${PP_TEMPORAL_DB_PASSWORD}
       POSTGRES_SEEDS: pp-temporal-db
       ENABLE_ES: "false"
+      # La visibilidad SQL admite solo 3 atributos Text por namespace; los de ejemplo
+      # de auto-setup gastan 2 y Postiz necesita 2 (organizationId, postId).
+      SKIP_ADD_CUSTOM_SEARCH_ATTRIBUTES: "true"
       DYNAMIC_CONFIG_FILE_PATH: config/dynamicconfig/development-sql.yaml
       TEMPORAL_NAMESPACE: default
     volumes:

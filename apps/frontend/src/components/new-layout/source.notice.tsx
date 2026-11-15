@@ -1,6 +1,6 @@
 // AGPL-3.0 §13: quien usa el servicio por red debe poder obtener el código
 // fuente de la versión que corre. Se muestra en la app y en el login.
-export const SOURCE_CODE_URL = 'https://github.com/rjvelazquez/pixeo-publish';
+export const SOURCE_CODE_URL = 'https://github.com/rjvelazquez/pixeo-publish/tree/pixeo';
 export const UPSTREAM_URL = 'https://github.com/gitroomhq/postiz-app';
 
 export const SourceNotice = () => {
