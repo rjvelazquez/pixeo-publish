@@ -32,8 +32,8 @@ services:
       - pp-config:/config
       - pp-uploads:/uploads
     networks: [interna, proxy]
-    mem_limit: 1536m
-    memswap_limit: 2g
+    mem_limit: 1792m
+    memswap_limit: 2304m
     cpus: 2.0
     logging: *logging
     depends_on:
@@ -111,7 +111,7 @@ services:
     volumes:
       - ./dynamicconfig:/etc/temporal/config/dynamicconfig:ro
     networks: [interna]
-    mem_limit: 640m
+    mem_limit: 512m
     logging: *logging
     depends_on:
       pp-temporal-db: { condition: service_healthy }
