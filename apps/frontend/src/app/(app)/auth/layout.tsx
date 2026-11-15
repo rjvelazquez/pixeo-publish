@@ -8,6 +8,7 @@ import { LogoTextComponent } from '@gitroom/frontend/components/ui/logo-text.com
 import { MantineWrapper } from '@gitroom/react/helpers/mantine.wrapper';
 import { Toaster } from '@gitroom/react/toaster/toaster';
 import { SourceNotice } from '@gitroom/frontend/components/new-layout/source.notice';
+import { ParallaxShowcase } from '@gitroom/frontend/components/auth/parallax.showcase';
 const ReturnUrlComponent = loadDynamic(() => import('./return.url.component'));
 export default async function AuthLayout({
   children,
@@ -30,12 +31,13 @@ export default async function AuthLayout({
             <SourceNotice />
           </div>
         </div>
-        <div className="text-[36px] flex-1 pt-[88px] hidden lg:flex flex-col items-center">
+        <div className="text-[36px] flex-1 pt-[88px] pb-[24px] hidden lg:flex flex-col items-center">
           <div className="text-center">
             Programa y publica en todas tus redes
             <br />
             desde <span className="text-[42px] text-[#FC69FF]">un solo lugar</span>
           </div>
+          <ParallaxShowcase />
         </div>
       </div>
     </MantineWrapper>
