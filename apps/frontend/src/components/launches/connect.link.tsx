@@ -35,7 +35,7 @@ const Wrapper: FC<{ children: ReactNode }> = ({ children }) => (
   <div className="flex flex-1 items-center justify-center text-white relative overflow-hidden">
     {/* Background gradient decoration */}
     <div className="absolute inset-0 opacity-30">
-      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-[#612BD3] rounded-full blur-[120px]" />
+      <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-[#772e7f] rounded-full blur-[120px]" />
       <div className="absolute bottom-[20%] right-[10%] w-[250px] h-[250px] bg-[#FC69FF] rounded-full blur-[120px]" />
     </div>
     {children}
@@ -99,7 +99,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
     return (
       <Wrapper>
         <div className="relative z-10 flex justify-center">
-          <div className="w-[48px] h-[48px] border-[3px] border-[#612BD3] border-t-transparent rounded-full animate-spin" />
+          <div className="w-[48px] h-[48px] border-[3px] border-[#772e7f] border-t-transparent rounded-full animate-spin" />
         </div>
       </Wrapper>
     );
@@ -148,13 +148,13 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
       <div className="relative z-10 w-full max-w-[500px] mx-auto px-[20px] py-[40px]">
         <div className="bg-[#1A1919] rounded-[16px] overflow-hidden flex flex-col">
           <div className="relative h-[140px] bg-[#141313] overflow-hidden flex items-center justify-center gap-[14px]">
-            <div className="absolute -top-[70px] left-[5%] w-[260px] h-[200px] bg-[#612BD3] rounded-full blur-[60px] opacity-80" />
+            <div className="absolute -top-[70px] left-[5%] w-[260px] h-[200px] bg-[#772e7f] rounded-full blur-[60px] opacity-80" />
             <div className="absolute -bottom-[90px] right-0 w-[240px] h-[200px] bg-[#FC69FF] rounded-full blur-[70px] opacity-60" />
             <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.22)_1px,transparent_1px)] bg-[length:7px_7px]" />
             <div className="relative w-[72px] h-[72px] rounded-[18px] bg-[#0B0A0A] border-[2px] border-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.45)] flex items-center justify-center">
               <img
                 src="/postiz.svg"
-                alt="Postiz"
+                alt="Pixeo Publish"
                 className="w-[40px] h-[44px]"
               />
             </div>
@@ -187,7 +187,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
             <h1 className="text-[24px] leading-[32px] font-semibold text-center">
               {t(
                 'connect_link_title',
-                'Postiz wants to connect to your {{platform}}',
+                'Pixeo Publish wants to connect to your {{platform}}',
                 values
               )}
             </h1>
@@ -208,7 +208,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
               >
                 {t(
                   'connect_link_automate',
-                  'Postiz will automate your {{platform}} account: it can schedule and publish posts on your behalf',
+                  'Pixeo Publish will automate your {{platform}} account: it can schedule and publish posts on your behalf',
                   values
                 )}
               </Row>
@@ -223,7 +223,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
               >
                 {t(
                   'connect_link_system',
-                  'Everything goes through the Postiz system: your account is added to a Postiz workspace and managed from there'
+                  'Everything goes through the Pixeo Publish system: your account is added to a Pixeo Publish workspace and managed from there'
                 )}
               </Row>
               {!!data.redirectTo && (
@@ -238,7 +238,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
                 >
                   {t(
                     'connect_link_redirect',
-                    'When you are done you will be sent to {{site}}, a website outside of Postiz',
+                    'When you are done you will be sent to {{site}}, a website outside of Pixeo Publish',
                     values
                   )}
                 </Row>
@@ -257,7 +257,7 @@ export const ConnectLink: FC<{ token: string }> = ({ token }) => {
               <button
                 onClick={connect}
                 disabled={submitting}
-                className="bg-[#612BD3] hover:bg-[#7B3FF2] disabled:opacity-50 text-white rounded-[8px] py-[12px] px-[16px] text-[14px] font-semibold transition-colors"
+                className="bg-[#772e7f] hover:bg-[#8f3a99] disabled:opacity-50 text-white rounded-[8px] py-[12px] px-[16px] text-[14px] font-semibold transition-colors"
               >
                 {submitting
                   ? t('connect_link_connecting', 'Connecting...')
