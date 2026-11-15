@@ -1,3 +1,15 @@
+## Pixeo Publish
+
+**Pixeo Publish** es un fork de [Postiz](https://github.com/gitroomhq/postiz-app) v2.26.0 mantenido por **Pixeo Creative Studio**. Lo ofrecemos como servicio administrado para programar y publicar contenido en redes sociales, con la marca y la configuracion de Pixeo.
+
+- Licencia: [AGPL-3.0](LICENSE), la misma del proyecto original. El codigo fuente de la version que corre en el servicio esta en este repositorio (rama `pixeo`).
+- Upstream: [gitroomhq/postiz-app](https://github.com/gitroomhq/postiz-app). Los creditos y avisos de copyright del proyecto original se conservan.
+- Imagen: `ghcr.io/rjvelazquez/pixeo-publish`.
+
+El resto de este documento es el README original de Postiz.
+
+---
+
 <p align="center">
   <a href="https://postiz.com/" target="_blank">
   <picture>
