@@ -1,10 +1,10 @@
 ---
 name: Build
 
+# Fork Pixeo: solo manual. El disparador original del upstream no aplica aqui
+# (secretos, repo o infraestructura de gitroomhq) o gastaria minutos de Actions.
 on:
-  push:
-  merge_group:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   build:

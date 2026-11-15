@@ -1,9 +1,9 @@
 ---
 name: Issue Label Triggers
+# Fork Pixeo: solo manual. El disparador original del upstream no aplica aqui
+# (secretos, repo o infraestructura de gitroomhq) o gastaria minutos de Actions.
 on:
-  issues:
-    types:
-      - labeled
+  workflow_dispatch:
 
 jobs:
   closed-public-website:

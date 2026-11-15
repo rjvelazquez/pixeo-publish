@@ -1,11 +1,10 @@
 ---
 name: "Build Containers"
 
+# Fork Pixeo: solo manual. El disparador original del upstream no aplica aqui
+# (secretos, repo o infraestructura de gitroomhq) o gastaria minutos de Actions.
 on:
   workflow_dispatch:
-  push:
-    tags:
-      - '*'
 
 jobs:
   build-containers-common:

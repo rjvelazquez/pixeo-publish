@@ -1,5 +1,7 @@
 name: Build Extension
 
+# Fork Pixeo: solo manual. El disparador original del upstream no aplica aqui
+# (secretos, repo o infraestructura de gitroomhq) o gastaria minutos de Actions.
 on:
   workflow_dispatch:
 

@@ -1,0 +1,63 @@
+---
+name: "Pixeo Image"
+
+# Imagen de Pixeo Publish (fork de Postiz) en ghcr.io/rjvelazquez/pixeo-publish.
+# Solo linux/amd64: el servidor de Pixeo es amd64 y arm64 duplicaria el tiempo.
+# Usa el mismo Dockerfile.dev y el build-arg que el workflow del upstream.
+
+on:
+  push:
+    branches:
+      - pixeo
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: pixeo-image-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  IMAGE: ghcr.io/rjvelazquez/pixeo-publish
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Version de la imagen
+        id: ver
+        run: |
+          base=$(node -p "require('./package.json').version")
+          echo "version=${base}-pixeo.${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to ghcr
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: Dockerfile.dev
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ steps.ver.outputs.version }}
+            ${{ env.IMAGE }}:latest
+          build-args: |
+            NEXT_PUBLIC_VERSION=${{ steps.ver.outputs.version }}
+          provenance: false
+          sbom: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
