@@ -41,7 +41,7 @@ const dias = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 const marcados = new Set([2, 5, 9, 12, 13, 17, 20, 24, 26]);
 
 const css = `
-.pp-scene { position: relative; flex: 1; width: 100%; min-height: 460px; overflow: hidden;
+.pp-scene { position: relative; flex: 1; width: 100%; min-height: 0; overflow: hidden;
   --px: 0; --py: 0; }
 .pp-layer { position: absolute; will-change: translate;
   translate: calc(var(--px) * var(--d) * 1px) calc(var(--py) * var(--d) * 1px);
@@ -85,6 +85,17 @@ const css = `
 }
 @media (prefers-reduced-motion: reduce) {
   .pp-layer { translate: none; transition: none; }
+}
+/* Pantallas bajas (portátiles de 720-800 px): todo más compacto para que el
+   calendario y las tarjetas quepan sin cortarse. */
+@media (max-height: 820px) {
+  .pp-card { width: 240px; padding: 12px; font-size: 13px; }
+  .pp-head { margin-bottom: 6px; }
+  .pp-head img { width: 26px; height: 26px; }
+  .pp-media { height: 52px; margin: 8px 0; }
+  .pp-cal { width: 190px; padding: 10px; font-size: 11px; }
+  .pp-cal-grid span { padding: 2px 0; }
+  .pp-bird { width: 96px; height: 96px; margin: -48px 0 0 -48px; }
 }
 @keyframes pp-in { from { opacity: 0; scale: 0.94; } to { opacity: 1; scale: 1; } }
 `;

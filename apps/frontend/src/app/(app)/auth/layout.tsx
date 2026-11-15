@@ -20,7 +20,7 @@ export default async function AuthLayout({
   return (
     <MantineWrapper>
       <Toaster />
-      <div className="bg-[#0E0E0E] flex flex-1 p-[12px] gap-[12px] min-h-screen w-screen text-white">
+      <div className="bg-[#0E0E0E] flex flex-1 p-[12px] gap-[12px] min-h-screen w-full text-white">
         {/*<style>{`html, body {overflow-x: hidden;}`}</style>*/}
         <ReturnUrlComponent />
         <AttributionComponent />
@@ -31,7 +31,7 @@ export default async function AuthLayout({
             <SourceNotice />
           </div>
         </div>
-        <div className="text-[36px] flex-1 pt-[88px] pb-[24px] hidden lg:flex flex-col items-center">
+        <div className="text-[36px] flex-1 pt-[88px] [@media(max-height:820px)]:pt-[40px] pb-[12px] hidden lg:flex flex-col items-center">
           <div className="text-center">
             Programa y publica en todas tus redes
             <br />
