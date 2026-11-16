@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /$
+Allow: /landing/
+Disallow: /
+
+Sitemap: https://publish.pixeocreativestudio.com/sitemap.xml
